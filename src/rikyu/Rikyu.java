@@ -35,6 +35,23 @@ public class Rikyu {
 						weightList.add(algorithm);
 					}
 				}
+
+				HashMap<Integer, ArrayList<String>> listWago = CSVReaderUtils
+						.csvToListWago();
+
+				if (listWago != null && listWago.size() > 0) {
+					for (Entry<Integer, ArrayList<String>> entry : listWago
+							.entrySet()) {
+						Algorithm algorithm = new Algorithm();
+						algorithm.setAlgorithmId(weightList.size()
+								+ entry.getKey());
+						algorithm.setWord(entry.getValue().get(1));
+						algorithm.setPoint(Double.parseDouble(entry.getValue()
+								.get(0)));
+						System.out.println(entry.getValue().get(1));
+						weightList.add(algorithm);
+					}
+				}
 			} catch (IOException e) {
 				e.printStackTrace();
 			}
@@ -64,5 +81,9 @@ public class Rikyu {
 	public static ArrayList<Algorithm> getWeightList() {
 		return weightList;
 	}
-
+	 public static void main(String[] args) {
+		 init();
+		 Sentence analyze = analyze("これは素晴らしい出来ですね");
+		 System.out.println(analyze.getPoint().toString());
+	 }
 }

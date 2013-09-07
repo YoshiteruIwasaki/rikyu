@@ -12,6 +12,8 @@ public class CSVReaderUtils {
 
 	private static final String ALGORITH_FILENAME_JP = "pn.csv.m3.120408.trim";
 
+	private static final String ALGORITH_FILENAME_WAGO = "wago.121808.pn";
+
 	private static final String ALGORITH_PATH = "rikyu/resources/";
 
 	private static final String ALGORITH_ENCODE = "UTF-8";
@@ -21,6 +23,10 @@ public class CSVReaderUtils {
 	public static HashMap<Integer, ArrayList<String>> csvToListJp()
 			throws IOException {
 		return csvToList(ALGORITH_PATH + ALGORITH_FILENAME_JP);
+	}
+	public static HashMap<Integer, ArrayList<String>> csvToListWago()
+			throws IOException {
+		return csvToList(ALGORITH_PATH + ALGORITH_FILENAME_WAGO);
 	}
 	/**
 	 * CSV読み込み
