@@ -48,7 +48,6 @@ public class Rikyu {
 						algorithm.setWord(entry.getValue().get(1));
 						algorithm.setPoint(Double.parseDouble(entry.getValue()
 								.get(0)));
-						System.out.println(entry.getValue().get(1));
 						weightList.add(algorithm);
 					}
 				}
